@@ -52,3 +52,12 @@ how to check if it is still available ? go see nmcli output or that previously c
 output will be like this : `74\:3C\:18\:C9\:86\:89:gopal999_fbrtc:8:WPA1 WPA2` and converted to :
 nmcli -t -f BSSID,SSID,CHAN,SECURITY dev wifi list |  awk -F: '{print $1":"$2":"$3":"$4":"$5":"$6}'  | sed 's/\\:/:/g' 
 we get: 74:3C:18:C9:86:89 lesgo
+
+
+```
+(
+.......
+) &
+pid=$!
+```
+`kill $pid` will simply not work here because, in the list of grouped commands, there may be commands like 'aircrack-ng', 'sleep', those will intend to occupy the terminal/shell, they will have different pid, so killing just pid of backgrounded task won't help, you should kill it's all sub process as such `kill -- -$pid`, this `$pid` is acutally process group ID, which is able to kill all the process on its group, since (...)& is grouping, `$!` is group ID. You can find group PID from any of othter PID on that group except for group PID itself, which is root PID for that group, use : `group_pid=$(ps -o pgid= $other_pid | grep -o '[0-9]*')`

@@ -1,0 +1,6 @@
+
+BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
+D8:B0:20:B0:09:29, 2024-10-28 16:06:53, 2024-10-28 16:07:53,  6, 130, WPA2, CCMP, PSK, -86,       12,        0,   0.  0.  0.  0,  19, lekhanath55_fbrtc_2, 
+
+Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
+

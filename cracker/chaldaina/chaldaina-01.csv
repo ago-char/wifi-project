@@ -1,0 +1,6 @@
+
+BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
+5C:8C:30:4B:9C:AD, 2024-10-28 16:03:50, 2024-10-28 16:04:50, 36, 866, WPA2, CCMP, PSK, -44,      593,        0,   0.  0.  0.  0,   9, chaldaina, 
+
+Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
+

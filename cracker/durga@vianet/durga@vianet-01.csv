@@ -1,0 +1,8 @@
+
+BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
+78:4F:24:5E:23:C3, 2024-10-28 16:04:51, 2024-10-28 16:05:52,  1, 130, WPA2, CCMP TKIP, PSK, -60,      589,      664,   0.  0.  0.  0,  12, durga@vianet, 
+
+Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
+48:83:B4:C5:BD:C5, 2024-10-28 16:04:51, 2024-10-28 16:04:57, -76,       69, 78:4F:24:5E:23:C3,
+54:FC:F0:A8:27:57, 2024-10-28 16:04:52, 2024-10-28 16:05:51, -69,      546, 78:4F:24:5E:23:C3,
+

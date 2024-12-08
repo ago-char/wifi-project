@@ -1,0 +1,8 @@
+
+BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
+F8:2E:3F:7D:A9:74, 2024-10-28 16:05:52, 2024-10-28 16:06:52,  8, 130, WPA2 WPA, CCMP TKIP, PSK, -66,      359,      252,   0.  0.  0.  0,  11, Bijita wifi, 
+
+Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
+DA:60:B1:DC:99:0E, 2024-10-28 16:05:52, 2024-10-28 16:06:38, -83,      140, F8:2E:3F:7D:A9:74,
+42:D9:EB:43:1A:26, 2024-10-28 16:05:52, 2024-10-28 16:06:31, -66,      134, F8:2E:3F:7D:A9:74,
+
